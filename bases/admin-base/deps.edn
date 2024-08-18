@@ -1,4 +1,4 @@
 {:paths   ["src" "resources"]
- :deps    {streamcraft/bootstrap {:local/root "../bootstrap"}}
+ :deps    {com.lambdaseq.stack/bootstrap {:local/root "../bootstrap"}}
  :aliases {:test {:extra-paths ["test"]
                   :extra-deps  {}}}}

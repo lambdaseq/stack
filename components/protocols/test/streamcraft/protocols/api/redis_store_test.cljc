@@ -1,1 +1,0 @@
-(ns streamcraft.protocols.api.redis-store-test)

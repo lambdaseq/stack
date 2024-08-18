@@ -6,21 +6,21 @@
             [hashp.core]
             [shadow.cljs.devtools.api :as shadow.api]
             [shadow.cljs.devtools.server :as shadow.server]
-            [streamcraft.admin-base.main :as admin]
-            [streamcraft.client-base.main :as client]
-            [streamcraft.domain.api :as domain]
-            [streamcraft.email-client-mailgun.api :as mailgun.email]
-            [streamcraft.entity-manager.api :as entity]
-            [streamcraft.http-electric-handler.api :as http-electric-handler]
-            [streamcraft.http-handler.api :as http-handler]
-            [streamcraft.http-middleware.api :as http-middleware]
-            [streamcraft.http-router.api :as http-router]
-            [streamcraft.http-server.api :as http-server]
-            [streamcraft.migration-datomic.api :as datomic.migration]
-            [streamcraft.persistence-datomic-pro.api :as datomic-pro]
-            [streamcraft.persistence-schema-transformer-malli-datomic.api :as m.d.persistence-schema-transformer]
-            [streamcraft.repl.core :as repl]
-            [streamcraft.system.api :as system]))
+            [com.lambdaseq.stack.admin-base.main :as admin]
+            [com.lambdaseq.stack.client-base.main :as client]
+            [com.lambdaseq.stack.domain.api :as domain]
+            [com.lambdaseq.stack.email-client-mailgun.api :as mailgun.email]
+            [com.lambdaseq.stack.entity-manager.api :as entity]
+            [com.lambdaseq.stack.http-electric-handler.api :as http-electric-handler]
+            [com.lambdaseq.stack.http-handler.api :as http-handler]
+            [com.lambdaseq.stack.http-middleware.api :as http-middleware]
+            [com.lambdaseq.stack.http-router.api :as http-router]
+            [com.lambdaseq.stack.http-server.api :as http-server]
+            [com.lambdaseq.stack.migration-datomic.api :as datomic.migration]
+            [com.lambdaseq.stack.persistence-datomic-pro.api :as datomic-pro]
+            [com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.api :as m.d.persistence-schema-transformer]
+            [com.lambdaseq.stack.repl.core :as repl]
+            [com.lambdaseq.stack.system.api :as system]))
 
 (repl/start-nrepl!)
 
@@ -41,12 +41,12 @@
                                    :hyperfiddle.electric/user-version "dev"}
                admin-routes []
                client-routes []]
-           (component/system-map
 
+           (component/system-map
              :xtdb-config {}
              :admin-jetty-config admin-jetty-config
              :client-jetty-config client-jetty-config
-             :datomic-config {:uri "datomic:mem://streamcraft"}
+             :datomic-config {:uri "datomic:mem://dev"}
              :schemas domain/schemas
              :email-client-config {}
              :email-client (component/using
@@ -157,6 +157,6 @@
   ;; add a person to datomic
   (let [{:keys [conn]} datomic
         person {:first-name "John" :last-name "Doe" :age 30}]
-    (d/transact (:conn datomic) [{:streamcraft.protocols.api.persistence/schema :person
-                                  :streamcraft.protocols.api.persistence/data   person}]))
+    (d/transact (:conn datomic) [{:com.lambdaseq.stack.protocols.api.persistence/schema :person
+                                  :com.lambdaseq.stack.protocols.api.persistence/data   person}]))
   )

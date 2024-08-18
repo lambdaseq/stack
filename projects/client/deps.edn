@@ -1,19 +1,19 @@
 {:paths   ["src"]
 
  :aliases {:backend  {:extra-deps
-                      {org.clojure/clojure          {:mvn/version "1.11.1"}
+                      {org.clojure/clojure              {:mvn/version "1.11.1"}
 
                        ; Bases
-                       streamcraft/client-base      {:local/root "../../bases/client-base"}
-                       streamcraft/bootstrap {:local/root "../../bases/bootstrap"}
-                       streamcraft/protocols        {:local/root "../../components/protocols"}
-                       streamcraft/repl             {:local/root "../../bases/repl"}
+                       com.lambdaseq.stack/client-base  {:local/root "../../bases/client-base"}
+                       com.lambdaseq.stack/bootstrap    {:local/root "../../bases/bootstrap"}
+                       com.lambdaseq.stack/protocols    {:local/root "../../components/protocols"}
+                       com.lambdaseq.stack/repl         {:local/root "../../bases/repl"}
                        ; Components
-                       streamcraft/system           {:local/root "../../components/system"}
-                       streamcraft/config           {:local/root "../../components/config-aero"}
-                       streamcraft/http-handler     {:local/root "../../components/http-handler-reitit"}
-                       streamcraft/http-server      {:local/root "../../components/http-server-jetty"}
-                       streamcraft/http-router      {:local/root "../../components/http-router-reitit"}}}
+                       com.lambdaseq.stack/system       {:local/root "../../components/system"}
+                       com.lambdaseq.stack/config       {:local/root "../../components/config-aero"}
+                       com.lambdaseq.stack/http-handler {:local/root "../../components/http-handler-reitit"}
+                       com.lambdaseq.stack/http-server  {:local/root "../../components/http-server-jetty"}
+                       com.lambdaseq.stack/http-router  {:local/root "../../components/http-router-reitit"}}}
            :frontend {:extra-deps {}}
            :dev      {:extra-paths ["resources/dev"]
                       :extra-deps  {hashp/hashp {:mvn/version "0.2.1"}}}

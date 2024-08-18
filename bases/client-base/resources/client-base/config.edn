@@ -7,4 +7,4 @@
  :nrepl       {:port #long #or [#env NREPL_PORT 7002]
                :bind #or [#env NREPL_BIND "127.0.0.1"]}
  :xtdb        {}
- :datomic     {:uri "datomic:mem://streamcraft"}}
+ :datomic     {:uri "datomic:mem://dev"}}

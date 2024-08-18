@@ -3,7 +3,7 @@
            nrepl/nrepl            {:mvn/version "0.9.0"}
            com.taoensso/timbre    {:mvn/version "6.3.1"}
            ; Components
-           streamcraft/utils  {:local/root "../../components/utils"}
+           com.lambdaseq.stack/utils  {:local/root "../../components/utils"}
            }
  :aliases {:test {:extra-paths ["test"]
                   :extra-deps  {}}}}

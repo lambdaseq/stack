@@ -1,11 +1,11 @@
-(ns streamcraft.persistence-xtdb.core-test
+(ns com.lambdaseq.stack.persistence-xtdb.core-test
   (:require [clojure.test :refer :all]
             [com.stuartsierra.component :as component]
-            [streamcraft.entity-manager.api :as-alias entity]
-            [streamcraft.protocols.api.entity-manager :as em]
-            [streamcraft.protocols.api.persistence :as persistence]
-            [streamcraft.utils.test :refer :all]
-            [streamcraft.utils.test.persistence :refer :all]))
+            [com.lambdaseq.stack.entity-manager.api :as-alias entity]
+            [com.lambdaseq.stack.protocols.api.entity-manager :as em]
+            [com.lambdaseq.stack.protocols.api.persistence :as persistence]
+            [com.lambdaseq.stack.utils.test :refer :all]
+            [com.lambdaseq.stack.utils.test.persistence :refer :all]))
 
 
 #_(use-fixtures :each (with-system-fixture
