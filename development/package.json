@@ -8,6 +8,8 @@
   "scripts": {
     "postcss:admin:build": "postcss resources/admin/public/css/input.css -o resources/admin/public/css/output.css --verbose",
     "postcss:admin:watch": "postcss resources/admin/public/css/input.css -o resources/admin/public/css/output.css --verbose -w",
+    "postcss:landing-page:build": "postcss resources/landing-page/public/css/input.css -o resources/landing-page/public/css/output.css --verbose",
+    "postcss:landing-page:watch": "postcss resources/landing-page/public/css/input.css -o resources/landing-page/public/css/output.css --verbose -w",
     "postcss:client:build": "postcss resources/client/public/css/input.css -o resources/client/public/css/output.css --verbose",
     "postcss:client:watch": "postcss resources/client/public/css/input.css -o resources/client/public/css/output.css --verbose -w",
     "postcss:build": "concurrently \"npm:postcss:admin:build\" \"npm:postcss:client:build\"",
@@ -19,7 +21,8 @@
     "postcss": "8.4.38",
     "postcss-cli": "11.0.0",
     "shadow-cljs": "2.28.9",
-    "tailwindcss": "3.4.4"
+    "tailwindcss": "3.4.4",
+    "@multiplyco/tailwind-clj": "1.0.3"
   },
   "dependencies": {
     "@tailwindcss/forms": "0.5.7",
