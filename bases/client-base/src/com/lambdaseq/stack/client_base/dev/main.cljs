@@ -3,10 +3,10 @@
             [com.lambdaseq.stack.client-base.app :refer [App]]
             [com.lambdaseq.stack.web-app.main :as app]))
 
-(def entrypoint (e/boot-client {} App nil))
+(def client-entrypoint (e/boot-client {} App nil))
 
 (defn ^:dev/after-load ^:export start! []
-  (app/start! entrypoint))
+  (app/start! client-entrypoint))
 
 (defn ^:dev/before-load stop! []
   (app/stop!))

@@ -55,7 +55,7 @@
     (-> this
         (assoc :config nil)
         (assoc :middleware nil)
-        (assoc :entrypoint nil)
+        (assoc :electric-entrypoint nil)
         (assoc :electric-handler nil)
         (assoc :routes nil)
         (assoc :router nil)))

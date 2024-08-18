@@ -47,7 +47,8 @@
                                       config))))))
   (stop [this]
     (log/info! :stopping-component {:component this})
-    (.stop ^Server server)
+    (when server
+      (.stop ^Server server))
     (-> this
         (assoc :config nil)
         (assoc :handler-provider nil)

@@ -51,9 +51,14 @@
                com.lambdaseq.stack/http-electric-handler                        {:local/root "components/http-electric-handler-reitit"}
                com.lambdaseq.stack/http-handler                                 {:local/root "components/http-handler-reitit"}
                com.lambdaseq.stack/http-server                                  {:local/root "components/http-server-jetty"}
-               com.lambdaseq.stack/http-router                                  {:local/root "components/http-router-reitit"}
                com.lambdaseq.stack/http-client                                  {:local/root "components/http-client-courier"}
 
+               ;;;; Routing helpers
+               com.lambdaseq.stack/electric-app-router                          {:local/root "components/electric-app-router-reitit"}
+               com.lambdaseq.stack/api-router                                   {:local/root "components/api-router-reitit"}
+               com.lambdaseq.stack/resource-router                              {:local/root "components/resource-router-reitit"}
+               com.lambdaseq.stack/router-aggregator                            {:local/root "components/router-aggregator-reitit"}
+               com.lambdaseq.stack/basic-router                                 {:local/root "components/basic-http-router-reitit"}
                ;;; Database/Storage
                #_#_com.lambdaseq.stack/persistence-xtdb {:local/root "components/persistence-xtdb"}
                com.lambdaseq.stack/persistence-datomic-pro                      {:local/root "components/persistence-datomic-pro"}
@@ -70,7 +75,7 @@
                com.lambdaseq.stack/admin-base                                   {:local/root "bases/admin-base"}
                com.lambdaseq.stack/client-base                                  {:local/root "bases/client-base"}}}
 
-             :defaults  {:extra-deps {}}
+             :+default  {:extra-deps {}}
 
              :test      {:extra-paths ["components/utils/test"]
                          :extra-deps  {polylith-kaocha/kaocha-wrapper

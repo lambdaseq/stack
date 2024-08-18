@@ -8,10 +8,10 @@
   (e/boot-server {} entrypoint/App req))
 
 (defn start! []
-  (bootstrap-system! {:name        "Client System"
-                      :config-path "client-base/config.edn"
-                      :routes      []
-                      :entrypoint  server-entrypoint}))
+  (bootstrap-system! {:name                "Client System"
+                      :config-path         "client-base/config.edn"
+                      :routes              []
+                      :electric-entrypoint server-entrypoint}))
 
 (defn -main [& args]
   (start!))

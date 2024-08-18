@@ -1,26 +1,29 @@
 (ns user
   (:require [clojure.tools.namespace.repl :as tools.repl]
             [com.brunobonacci.mulog :as mu]
-            [com.stuartsierra.component :as component]
-            [datomic.api :as d]
-            [hashp.core]
-            [shadow.cljs.devtools.api :as shadow.api]
-            [shadow.cljs.devtools.server :as shadow.server]
             [com.lambdaseq.stack.admin-base.main :as admin]
+            [com.lambdaseq.stack.api-router.api :as api-router]
             [com.lambdaseq.stack.client-base.main :as client]
             [com.lambdaseq.stack.domain.api :as domain]
+            [com.lambdaseq.stack.electric-app-router.api :as electric-app-router]
             [com.lambdaseq.stack.email-client-mailgun.api :as mailgun.email]
             [com.lambdaseq.stack.entity-manager.api :as entity]
             [com.lambdaseq.stack.http-electric-handler.api :as http-electric-handler]
             [com.lambdaseq.stack.http-handler.api :as http-handler]
             [com.lambdaseq.stack.http-middleware.api :as http-middleware]
-            [com.lambdaseq.stack.http-router.api :as http-router]
             [com.lambdaseq.stack.http-server.api :as http-server]
             [com.lambdaseq.stack.migration-datomic.api :as datomic.migration]
             [com.lambdaseq.stack.persistence-datomic-pro.api :as datomic-pro]
             [com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.api :as m.d.persistence-schema-transformer]
             [com.lambdaseq.stack.repl.core :as repl]
-            [com.lambdaseq.stack.system.api :as system]))
+            [com.lambdaseq.stack.resource-router.api :as resource-router]
+            [com.lambdaseq.stack.router-aggregator.api :as router-aggregator]
+            [com.lambdaseq.stack.system.api :as system]
+            [com.stuartsierra.component :as component]
+            [datomic.api :as d]
+            [hashp.core]
+            [shadow.cljs.devtools.api :as shadow.api]
+            [shadow.cljs.devtools.server :as shadow.server]))
 
 (repl/start-nrepl!)
 
@@ -38,9 +41,7 @@
                admin-hyperfiddle {:manifest-path                     "admin/public/js/manifest.edn"
                                   :hyperfiddle.electric/user-version "dev"}
                client-hyperfiddle {:manifest-path                     "admin/public/js/manifest.edn"
-                                   :hyperfiddle.electric/user-version "dev"}
-               admin-routes []
-               client-routes []]
+                                   :hyperfiddle.electric/user-version "dev"}]
 
            (component/system-map
              :xtdb-config {}
@@ -82,23 +83,47 @@
                                         {:jetty       client-jetty-config
                                          :hyperfiddle client-hyperfiddle})
 
-             :admin-routes admin-routes
+             :admin-api-router (component/using
+                                 (api-router/make-router [])
+                                 {:middleware :http-middleware})
 
-             :client-routes client-routes
+             :admin-electric-router (component/using
+                                      (electric-app-router/make-router)
+                                      {:electric-handler :admin-electric-handler
+                                       :middleware       :http-middleware})
+
+             :admin-resource-router (component/using
+                                      (resource-router/make-router)
+                                      {:middleware :http-middleware
+                                       :config     :admin-jetty-config})
 
              :admin-router (component/using
-                             (http-router/make-router)
-                             {:middleware       :http-middleware
-                              :electric-handler :admin-electric-handler
-                              :routes           :admin-routes
-                              :config           :admin-jetty-config})
+                             (router-aggregator/make-router)
+                             {:middleware :http-middleware
+                              :router1    :admin-api-router
+                              :router2    :admin-electric-router
+                              :router3    :admin-resource-router})
+
+             :client-api-router (component/using
+                                  (api-router/make-router [])
+                                  {:middleware :http-middleware})
+
+             :client-electric-router (component/using
+                                       (electric-app-router/make-router)
+                                       {:electric-handler :client-electric-handler
+                                        :middleware       :http-middleware})
+
+             :client-resource-router (component/using
+                                       (resource-router/make-router)
+                                       {:middleware :http-middleware
+                                        :config     :client-jetty-config})
 
              :client-router (component/using
-                              (http-router/make-router)
-                              {:middleware       :http-middleware
-                               :electric-handler :client-electric-handler
-                               :routes           :client-routes
-                               :config           :client-jetty-config})
+                              (router-aggregator/make-router)
+                              {:middleware :http-middleware
+                               :router1    :client-api-router
+                               :router2    :client-electric-router
+                               :router3    :client-resource-router})
 
              :admin-handler (component/using
                               (http-handler/make-handler)

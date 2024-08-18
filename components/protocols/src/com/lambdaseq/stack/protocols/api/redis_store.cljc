@@ -1,13 +1,14 @@
-(ns com.lambdaseq.stack.protocols.api.redis-store)
+(ns com.lambdaseq.stack.protocols.api.redis-store
+  (:refer-clojure :exclude [run!]))
 
 (defprotocol IRedisStore
   "Protocol for interacting with Redis or Redis-compatible key-value store."
 
   (run! [this] [this opts]
-    "Run the commands in the store.")
+    "Run the commands in the store object.")
 
   (clear-commands [this]
-    "Clear the commands in the store.")
+    "Returns a new store object with no commands.")
 
   (-get [this key]
     "Retrieve the value associated with the given key.")

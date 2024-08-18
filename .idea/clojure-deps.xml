@@ -134,7 +134,6 @@
         <option value="file://$PROJECT_DIR$/components/http-electric-handler-reitit/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/http-handler-reitit/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/http-middleware-reitit/deps.edn" />
-        <option value="file://$PROJECT_DIR$/components/http-router-reitit/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/http-server-jetty/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/migration-datomic/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/persistence-datomic-pro/deps.edn" />

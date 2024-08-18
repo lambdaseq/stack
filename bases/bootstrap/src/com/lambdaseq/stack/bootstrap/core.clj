@@ -3,10 +3,10 @@
             [com.lambdaseq.stack.system.api :as system]))
 
 (defn bootstrap-system!
-  [{:keys [name config-path routes entrypoint]}]
+  [{:keys [name config-path routes electric-entrypoint]}]
   (let [config (config/load-config! config-path)
-        system (system/make-system {:name       name
-                                    :entrypoint entrypoint
-                                    :routes     routes
-                                    :config     config})]
+        system (system/make-system {:name                name
+                                    :electric-entrypoint electric-entrypoint
+                                    :routes              routes
+                                    :config              config})]
     (system/start-system! system)))
