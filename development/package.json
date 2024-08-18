@@ -8,12 +8,12 @@
   "scripts": {
     "postcss:admin:build": "postcss resources/admin/public/css/input.css -o resources/admin/public/css/output.css --verbose",
     "postcss:admin:watch": "postcss resources/admin/public/css/input.css -o resources/admin/public/css/output.css --verbose -w",
-    "postcss:landing-page:build": "postcss resources/landing-page/public/css/input.css -o resources/landing-page/public/css/output.css --verbose",
-    "postcss:landing-page:watch": "postcss resources/landing-page/public/css/input.css -o resources/landing-page/public/css/output.css --verbose -w",
     "postcss:client:build": "postcss resources/client/public/css/input.css -o resources/client/public/css/output.css --verbose",
     "postcss:client:watch": "postcss resources/client/public/css/input.css -o resources/client/public/css/output.css --verbose -w",
-    "postcss:build": "concurrently \"npm:postcss:admin:build\" \"npm:postcss:client:build\"",
-    "postcss:watch": "concurrently \"npm:postcss:admin:watch\" \"npm:postcss:client:watch\""
+    "postcss:landing-page:build": "PROJECT_TYPE=page postcss resources/landing-page/public/css/input.css -o resources/landing-page/public/css/output.css --verbose",
+    "postcss:landing-page:watch": "PROJECT_TYPE=page postcss resources/landing-page/public/css/input.css -o resources/landing-page/public/css/output.css --verbose -w",
+    "postcss:build": "concurrently \"npm:postcss:admin:build\" \"npm:postcss:client:build\" \"npm:postcss:landing-page:build\"",
+    "postcss:watch": "concurrently \"npm:postcss:admin:watch\" \"npm:postcss:client:watch\" \"npm:postcss:landing-page:watch\""
   },
   "devDependencies": {
     "autoprefixer": "10.4.19",
