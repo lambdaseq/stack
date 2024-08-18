@@ -1,5 +1,6 @@
 const presetQuick = require("franken-ui/shadcn-ui/preset-quick");
 const defaultTheme = require('tailwindcss/defaultTheme')
+const {scanClojure} = require('@multiplyco/tailwind-clj');
 
 module.exports = {
     // Configure to scan clojure files for use in server side applications (with hiccup for example)
