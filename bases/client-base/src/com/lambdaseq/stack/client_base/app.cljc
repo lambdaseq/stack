@@ -1,9 +1,8 @@
 (ns com.lambdaseq.stack.client-base.app
-  (:require [hyperfiddle.electric :as e]
-            [hyperfiddle.electric-dom2 :as dom]
-            [com.lambdaseq.stack.client-base.app.layout :as layout]
-            [com.lambdaseq.stack.client-base.app.router :as app-router]
-            [com.lambdaseq.stack.frontend-router.api :as frontend-router]))
+  (:require [com.lambdaseq.stack.client-base.app.router :as app-router]
+            [com.lambdaseq.stack.frontend-router.api :as frontend-router]
+            [hyperfiddle.electric :as e]
+            [hyperfiddle.electric-dom2 :as dom]))
 
 (e/defn App [ring-request]
   (e/client
@@ -13,5 +12,4 @@
                 frontend-router/match match
                 frontend-router/data (some-> match :data)
                 frontend-router/name (some-> match :data :name)]
-        (layout/MainPageLayout.
-          (e/fn [] (app-router/RouteSwitch.)))))))
+        (dom/h1 (dom/text "Hello, from Admin app!"))))))
