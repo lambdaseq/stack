@@ -3,6 +3,7 @@
   <component name="DepsProjectSettings">
     <option name="enabledAliases">
       <set>
+        <option value="+http-reitit" />
         <option value="backend" />
         <option value="defaults" />
         <option value="dev" />
@@ -35,11 +36,35 @@
           <option name="type" value="TEST_SOURCE" />
         </FolderState>
         <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/api-router-compojure/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/api-router-reitit/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/basic-http-router-compojure/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/basic-http-router-reitit/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
           <option name="dirUrl" value="file://$PROJECT_DIR$/components/datalog-query-builder/test" />
           <option name="type" value="TEST_SOURCE" />
         </FolderState>
         <FolderState>
           <option name="dirUrl" value="file://$PROJECT_DIR$/components/domain/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/electric-app-router-compojure/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/electric-app-router-reitit/test" />
           <option name="type" value="TEST_SOURCE" />
         </FolderState>
         <FolderState>
@@ -63,7 +88,19 @@
           <option name="type" value="TEST_SOURCE" />
         </FolderState>
         <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/http-electric-handler-compojure/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/http-handler-compojure/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
           <option name="dirUrl" value="file://$PROJECT_DIR$/components/http-handler-reitit/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/http-middleware-compojure/test" />
           <option name="type" value="TEST_SOURCE" />
         </FolderState>
         <FolderState>
@@ -76,6 +113,10 @@
         </FolderState>
         <FolderState>
           <option name="dirUrl" value="file://$PROJECT_DIR$/components/http-server-jetty/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/logging-mulog/test" />
           <option name="type" value="TEST_SOURCE" />
         </FolderState>
         <FolderState>
@@ -107,6 +148,22 @@
           <option name="type" value="TEST_SOURCE" />
         </FolderState>
         <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/resource-router-compojure/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/resource-router-reitit/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/router-aggregator-compojure/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
+          <option name="dirUrl" value="file://$PROJECT_DIR$/components/router-aggregator-reitit/test" />
+          <option name="type" value="TEST_SOURCE" />
+        </FolderState>
+        <FolderState>
           <option name="dirUrl" value="file://$PROJECT_DIR$/components/system/test" />
           <option name="type" value="TEST_SOURCE" />
         </FolderState>
@@ -123,23 +180,32 @@
         <option value="file://$PROJECT_DIR$/bases/client-base/deps.edn" />
         <option value="file://$PROJECT_DIR$/bases/repl/deps.edn" />
         <option value="file://$PROJECT_DIR$/bases/web-app/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/api-router-compojure/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/basic-http-router-compojure/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/config-aero/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/datalog-query-builder/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/domain/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/electric-app-router-compojure/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/email-client-mailgun/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/entity-manager-malli/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/frontend-router-reitit/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/html-renderer-hiccup/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/http-client-courier/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/http-electric-handler-compojure/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/http-electric-handler-reitit/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/http-handler-compojure/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/http-handler-reitit/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/http-middleware-compojure/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/http-middleware-reitit/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/http-server-jetty/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/logging-mulog/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/migration-datomic/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/persistence-datomic-pro/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/persistence-schema-transformer-malli-datomic/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/protocols/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/redis-store-carmine/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/resource-router-compojure/deps.edn" />
+        <option value="file://$PROJECT_DIR$/components/router-aggregator-compojure/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/system/deps.edn" />
         <option value="file://$PROJECT_DIR$/components/utils/deps.edn" />
         <option value="file://$PROJECT_DIR$/deps.edn" />

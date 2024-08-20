@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ClojureProjectResolveSettings">
-    <currentScheme>IDE</currentScheme>
+    <item key="conjurernix.malli-pojo.api/defpojo" resolves-as="clojure.core/def" />
+    <item key="hyperfiddle.electric/do-event-pending" resolves-as="clojure.core/doseq" />
+    <item key="taoensso.carmine.commands/defcommand" resolves-as="clojure.core/def" />
+    <item key="aero.impl.macro/usetime" resolves-as="clojure.core/do" />
+    <item key="hyperfiddle.electric/def" resolves-as="clojure.core/def" />
+    <item key="taoensso.encore/defalias" resolves-as="clojure.core/def" />
+    <item key="com.rpl.specter/defnav" resolves-as="clojure.core/def" />
+    <item key="xtdb.api/template" resolves-as="cursive.intentions.resolve/resolve-none" />
+    <item key="hyperfiddle.electric/for" resolves-as="clojure.core/for" />
+    <item key="com.rpl.specter/defrichnav" resolves-as="clojure.core/def" />
+    <item key="hti.re-dash.core/reg-event-fx" resolves-as="re-frame.core/reg-event-fx" />
+    <item key="com.rpl.specter/defmacroalias" resolves-as="clojure.core/def" />
+    <item key="hyperfiddle.electric/fn" resolves-as="clojure.core/fn" />
+    <item key="hti.re-dash.core/reg-event-db" resolves-as="re-frame.core/reg-event-db" />
+    <item key="hyperfiddle.electric-dom2/table" resolves-as="clojure.core/do" />
+    <item key="hti.re-dash.core/reg-sub" resolves-as="re-frame.core/reg-sub" />
+    <item key="hyperfiddle.electric/defn*" resolves-as="clojure.core/defn" />
+    <item key="potemkin/import-vars" resolves-as="cljs.core/declare" />
+    <item key="com.backindrive.commons.widgets/def-button" resolves-as="clojure.core/defn" />
+    <item key="hyperfiddle.electric/defn" resolves-as="clojure.core/defn" />
+    <item key="clojure.core/defmacro" resolves-as="clojure.core/defn" />
+    <item key="conjurernix.electric-franken/defcomponent" resolves-as="clojure.core/defn" />
+    <currentScheme>PROJECT</currentScheme>
   </component>
 </project>

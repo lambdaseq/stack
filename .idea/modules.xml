@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projects/admin/admin.iml" filepath="$PROJECT_DIR$/projects/admin/admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/bases/admin-base/admin-base.iml" filepath="$PROJECT_DIR$/bases/admin-base/admin-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/api-router-compojure/api-router-compojure.iml" filepath="$PROJECT_DIR$/components/api-router-compojure/api-router-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/api-router-reitit/api-router-reitit.iml" filepath="$PROJECT_DIR$/components/api-router-reitit/api-router-reitit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/basic-http-router-compojure/basic-http-router-compojure.iml" filepath="$PROJECT_DIR$/components/basic-http-router-compojure/basic-http-router-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/basic-http-router-reitit/basic-http-router-reitit.iml" filepath="$PROJECT_DIR$/components/basic-http-router-reitit/basic-http-router-reitit.iml" />
       <module fileurl="file://$PROJECT_DIR$/bases/bootstrap/bootstrap.iml" filepath="$PROJECT_DIR$/bases/bootstrap/bootstrap.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/client/client.iml" filepath="$PROJECT_DIR$/projects/client/client.iml" />
@@ -12,16 +14,19 @@
       <module fileurl="file://$PROJECT_DIR$/components/config-aero/config-aero.iml" filepath="$PROJECT_DIR$/components/config-aero/config-aero.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/datalog-query-builder/datalog-query-builder.iml" filepath="$PROJECT_DIR$/components/datalog-query-builder/datalog-query-builder.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/domain/domain.iml" filepath="$PROJECT_DIR$/components/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/electric-app-router-compojure/electric-app-router-compojure.iml" filepath="$PROJECT_DIR$/components/electric-app-router-compojure/electric-app-router-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/electric-app-router-reitit/electric-app-router-reitit.iml" filepath="$PROJECT_DIR$/components/electric-app-router-reitit/electric-app-router-reitit.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/email-client-mailgun/email-client-mailgun.iml" filepath="$PROJECT_DIR$/components/email-client-mailgun/email-client-mailgun.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/entity-manager-malli/entity-manager-malli.iml" filepath="$PROJECT_DIR$/components/entity-manager-malli/entity-manager-malli.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/frontend-router-reitit/frontend-router-reitit.iml" filepath="$PROJECT_DIR$/components/frontend-router-reitit/frontend-router-reitit.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/html-renderer-hiccup/html-renderer-hiccup.iml" filepath="$PROJECT_DIR$/components/html-renderer-hiccup/html-renderer-hiccup.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/http-client-courier/http-client-courier.iml" filepath="$PROJECT_DIR$/components/http-client-courier/http-client-courier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/http-electric-handler-compojure/http-electric-handler-compojure.iml" filepath="$PROJECT_DIR$/components/http-electric-handler-compojure/http-electric-handler-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/http-electric-handler-reitit/http-electric-handler-reitit.iml" filepath="$PROJECT_DIR$/components/http-electric-handler-reitit/http-electric-handler-reitit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/http-handler-compojure/http-handler-compojure.iml" filepath="$PROJECT_DIR$/components/http-handler-compojure/http-handler-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/http-handler-reitit/http-handler-reitit.iml" filepath="$PROJECT_DIR$/components/http-handler-reitit/http-handler-reitit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/http-middleware-compojure/http-middleware-compojure.iml" filepath="$PROJECT_DIR$/components/http-middleware-compojure/http-middleware-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/http-middleware-reitit/http-middleware-reitit.iml" filepath="$PROJECT_DIR$/components/http-middleware-reitit/http-middleware-reitit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/components/http-router-reitit/http-router-reitit.iml" filepath="$PROJECT_DIR$/components/http-router-reitit/http-router-reitit.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/http-server-jetty/http-server-jetty.iml" filepath="$PROJECT_DIR$/components/http-server-jetty/http-server-jetty.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/logging-mulog/logging-mulog.iml" filepath="$PROJECT_DIR$/components/logging-mulog/logging-mulog.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/migration-datomic/migration-datomic.iml" filepath="$PROJECT_DIR$/components/migration-datomic/migration-datomic.iml" />
@@ -30,10 +35,11 @@
       <module fileurl="file://$PROJECT_DIR$/components/protocols/protocols.iml" filepath="$PROJECT_DIR$/components/protocols/protocols.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/redis-store-carmine/redis-store-carmine.iml" filepath="$PROJECT_DIR$/components/redis-store-carmine/redis-store-carmine.iml" />
       <module fileurl="file://$PROJECT_DIR$/bases/repl/repl.iml" filepath="$PROJECT_DIR$/bases/repl/repl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/resource-router-compojure/resource-router-compojure.iml" filepath="$PROJECT_DIR$/components/resource-router-compojure/resource-router-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/resource-router-reitit/resource-router-reitit.iml" filepath="$PROJECT_DIR$/components/resource-router-reitit/resource-router-reitit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/router-aggregator-compojure/router-aggregator-compojure.iml" filepath="$PROJECT_DIR$/components/router-aggregator-compojure/router-aggregator-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/router-aggregator-reitit/router-aggregator-reitit.iml" filepath="$PROJECT_DIR$/components/router-aggregator-reitit/router-aggregator-reitit.iml" />
       <module fileurl="file://$PROJECT_DIR$/stack.iml" filepath="$PROJECT_DIR$/stack.iml" />
-      <module fileurl="file://$PROJECT_DIR$/streamwrite.iml" filepath="$PROJECT_DIR$/streamwrite.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/system/system.iml" filepath="$PROJECT_DIR$/components/system/system.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/utils/utils.iml" filepath="$PROJECT_DIR$/components/utils/utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/bases/web-app/web-app.iml" filepath="$PROJECT_DIR$/bases/web-app/web-app.iml" />

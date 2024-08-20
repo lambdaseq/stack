@@ -13,7 +13,7 @@
                        com.lambdaseq.stack/config       {:local/root "../../components/config-aero"}
                        com.lambdaseq.stack/http-handler {:local/root "../../components/http-handler-reitit"}
                        com.lambdaseq.stack/http-server  {:local/root "../../components/http-server-jetty"}
-                       com.lambdaseq.stack/http-router  {:local/root "../../components/http-router-reitit"}}}
+                       #_#_com.lambdaseq.stack/http-router  {:local/root "../../components/http-router-reitit"}}}
            :frontend {:extra-deps {}}
            :dev      {:extra-paths ["resources/dev"]
                       :extra-deps  {hashp/hashp {:mvn/version "0.2.1"}}}

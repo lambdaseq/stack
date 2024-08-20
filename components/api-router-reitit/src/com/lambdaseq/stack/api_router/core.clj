@@ -1,5 +1,5 @@
 (ns com.lambdaseq.stack.api-router.core
-  (:require [com.lambdaseq.stack.basic-http-router-reitit.api :as router]
+  (:require [com.lambdaseq.stack.basic-http-router.api :as router]
             [reitit.swagger :as swagger]
             [reitit.swagger-ui :as swagger-ui]
             [ring.util.http-response :as http]))

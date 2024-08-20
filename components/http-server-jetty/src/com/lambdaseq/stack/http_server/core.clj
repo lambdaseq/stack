@@ -1,8 +1,8 @@
 (ns com.lambdaseq.stack.http-server.core
-  (:require [com.stuartsierra.component :as component]
-            [ring.adapter.jetty :as jetty]
-            [com.lambdaseq.stack.logging.api :as log]
-            [com.lambdaseq.stack.protocols.api.provider.http-handler :as handler])
+  (:require [com.lambdaseq.stack.logging.api :as log]
+            [com.lambdaseq.stack.protocols.api.provider.http-handler :as handler]
+            [com.stuartsierra.component :as component]
+            [ring.adapter.jetty :as jetty])
   (:import (java.time Duration)
            (org.eclipse.jetty.server Server)
            (org.eclipse.jetty.server.handler.gzip GzipHandler)
@@ -27,9 +27,10 @@
     (.getHandler server)
     (reify JettyWebSocketServletContainerInitializer$Configurator
       (accept [_this _servletContext wsContainer]
-        (.setIdleTimeout wsContainer (Duration/ofSeconds 60))
-        (.setMaxBinaryMessageSize wsContainer (* 100 1024 1024)) ; 100M - temporary
-        (.setMaxTextMessageSize wsContainer (* 100 1024 1024)) ; 100M - temporary
+        (doto wsContainer
+          (.setIdleTimeout (Duration/ofSeconds 60))
+          (.setMaxBinaryMessageSize (* 100 1024 1024))      ; 100M - temporary
+          (.setMaxTextMessageSize (* 100 1024 1024)))       ; 100M - temporary
         ))))
 
 (defrecord JettyHttpServer
