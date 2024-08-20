@@ -46,7 +46,6 @@
                com.lambdaseq.stack/logging                                      {:local/root "components/logging-mulog"}
 
                ;;; Http
-               com.lambdaseq.stack/http-server                                  {:local/root "components/http-server-jetty"}
                com.lambdaseq.stack/http-client                                  {:local/root "components/http-client-courier"}
 
                ;;;; Routing helpers
@@ -74,7 +73,8 @@
                                             com.lambdaseq.stack/api-router            {:local/root "components/api-router-reitit"}
                                             com.lambdaseq.stack/resource-router       {:local/root "components/resource-router-reitit"}
                                             com.lambdaseq.stack/router-aggregator     {:local/root "components/router-aggregator-reitit"}
-                                            com.lambdaseq.stack/basic-router          {:local/root "components/basic-http-router-reitit"}}}
+                                            com.lambdaseq.stack/basic-router          {:local/root "components/basic-http-router-reitit"}
+                                            com.lambdaseq.stack/http-server           {:local/root "components/http-server-jetty"}}}
 
              :+http-compojure {:extra-deps {com.lambdaseq.stack/http-middleware       {:local/root "components/http-middleware-compojure"}
                                             com.lambdaseq.stack/http-electric-handler {:local/root "components/http-electric-handler-compojure"}
@@ -93,6 +93,10 @@
                                             com.lambdaseq.stack/resource-router       {:local/root "components/resource-router-reitit"}
                                             com.lambdaseq.stack/router-aggregator     {:local/root "components/router-aggregator-reitit"}
                                             com.lambdaseq.stack/basic-router          {:local/root "components/basic-http-router-reitit"}}}
+
+             :+http-jetty     {:extra-deps {com.lambdaseq.stack/http-server {:local/root "components/http-server-jetty"}}}
+
+             :+http-undertow  {:extra-deps {com.lambdaseq.stack/http-server {:local/root "components/http-server-undertow"}}}
 
              :test            {:extra-paths ["components/utils/test"]
                                :extra-deps  {polylith-kaocha/kaocha-wrapper

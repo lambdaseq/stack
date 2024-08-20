@@ -4,6 +4,7 @@
     <option name="enabledAliases">
       <set>
         <option value="+http-reitit" />
+        <option value="+http-undertow" />
         <option value="backend" />
         <option value="defaults" />
         <option value="dev" />

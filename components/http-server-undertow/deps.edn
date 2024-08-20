@@ -1,0 +1,4 @@
+{:paths ["src" "resources"]
+ :deps {com.github.strojure/ring-undertow {:mvn/version "1.2.0-109"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {}}}}

@@ -28,6 +28,7 @@
       <module fileurl="file://$PROJECT_DIR$/components/http-middleware-compojure/http-middleware-compojure.iml" filepath="$PROJECT_DIR$/components/http-middleware-compojure/http-middleware-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/http-middleware-reitit/http-middleware-reitit.iml" filepath="$PROJECT_DIR$/components/http-middleware-reitit/http-middleware-reitit.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/http-server-jetty/http-server-jetty.iml" filepath="$PROJECT_DIR$/components/http-server-jetty/http-server-jetty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/http-server-undertow/http-server-undertow.iml" filepath="$PROJECT_DIR$/components/http-server-undertow/http-server-undertow.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/logging-mulog/logging-mulog.iml" filepath="$PROJECT_DIR$/components/logging-mulog/logging-mulog.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/migration-datomic/migration-datomic.iml" filepath="$PROJECT_DIR$/components/migration-datomic/migration-datomic.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/persistence-datomic-pro/persistence-datomic-pro.iml" filepath="$PROJECT_DIR$/components/persistence-datomic-pro/persistence-datomic-pro.iml" />
