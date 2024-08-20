@@ -212,6 +212,7 @@
         <option value="file://$PROJECT_DIR$/deps.edn" />
         <option value="file://$PROJECT_DIR$/projects/admin/deps.edn" />
         <option value="file://$PROJECT_DIR$/projects/client/deps.edn" />
+        <option value="file://$PROJECT_DIR$/projects/landing-page/deps.edn" />
       </set>
     </option>
   </component>
