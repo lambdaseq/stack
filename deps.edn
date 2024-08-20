@@ -72,6 +72,7 @@
                                               com.lambdaseq.stack/resource-router       {:local/root "components/resource-router-reitit"}
                                               com.lambdaseq.stack/router-aggregator     {:local/root "components/router-aggregator-reitit"}
                                               com.lambdaseq.stack/basic-router          {:local/root "components/basic-http-router-reitit"}
+
                                               com.lambdaseq.stack/http-server           {:local/root "components/http-server-jetty"}
 
                                               com.lambdaseq.stack/logging               {:local/root "components/logging-telemere"}}}
