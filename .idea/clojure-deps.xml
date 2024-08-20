@@ -5,6 +5,8 @@
       <set>
         <option value="+http-reitit" />
         <option value="+http-undertow" />
+        <option value="+logging-mulog" />
+        <option value="+logging-telemere" />
         <option value="backend" />
         <option value="defaults" />
         <option value="dev" />

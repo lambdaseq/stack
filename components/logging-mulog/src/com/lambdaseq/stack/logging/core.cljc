@@ -21,8 +21,4 @@
      ~@body))
 
 (defmacro trace! [event opts & body]
-  `(let [opts# ~opts
-         trace-opts# (if (map? opts#) opts# {})]
-     (mu/trace ~event
-       trace-opts#
-       ~@body)))
+  `(mu/trace ~event ~opts ~@body))
