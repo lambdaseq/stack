@@ -1,9 +1,5 @@
 {:paths   ["src" "resources"]
- :deps    {hashp/hashp            {:mvn/version "0.2.1"}
-           nrepl/nrepl            {:mvn/version "0.9.0"}
-           com.taoensso/timbre    {:mvn/version "6.3.1"}
-           ; Components
-           com.lambdaseq.stack/utils  {:local/root "../../components/utils"}
-           }
+ :deps    {nrepl/nrepl         {:mvn/version "0.9.0"}
+           com.taoensso/timbre {:mvn/version "6.3.1"}}
  :aliases {:test {:extra-paths ["test"]
                   :extra-deps  {}}}}

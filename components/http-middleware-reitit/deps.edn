@@ -1,4 +1,4 @@
-{:paths ["src" "resources"]
- :deps {}
+{:paths   ["src" "resources"]
+ :deps    {metosin/reitit {:mvn/version "0.7.1"}}
  :aliases {:test {:extra-paths ["test"]
-                  :extra-deps {}}}}
+                  :extra-deps  {}}}}

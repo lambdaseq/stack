@@ -1,29 +1,6 @@
 {:paths   ["src"]
 
- :aliases {:backend  {:extra-deps
-                      {org.clojure/clojure              {:mvn/version "1.11.1"}
-
-                       ; Bases
-                       com.lambdaseq.stack/client-base  {:local/root "../../bases/client-base"}
-                       com.lambdaseq.stack/bootstrap    {:local/root "../../bases/bootstrap"}
-                       com.lambdaseq.stack/protocols    {:local/root "../../components/protocols"}
-                       com.lambdaseq.stack/repl         {:local/root "../../bases/repl"}
-                       ; Components
-                       com.lambdaseq.stack/system       {:local/root "../../components/system"}
-                       com.lambdaseq.stack/config       {:local/root "../../components/config-aero"}
-
-                       com.lambdaseq.stack/http-middleware       {:local/root "../../components/http-middleware-reitit"}
-                       com.lambdaseq.stack/http-electric-handler {:local/root "../../components/http-electric-handler-reitit"}
-                       com.lambdaseq.stack/http-handler          {:local/root "../../components/http-handler-reitit"}
-                       com.lambdaseq.stack/electric-app-router   {:local/root "../../components/electric-app-router-reitit"}
-                       com.lambdaseq.stack/api-router            {:local/root "../../components/api-router-reitit"}
-                       com.lambdaseq.stack/resource-router       {:local/root "../../components/resource-router-reitit"}
-                       com.lambdaseq.stack/router-aggregator     {:local/root "../../components/router-aggregator-reitit"}
-                       com.lambdaseq.stack/basic-router          {:local/root "../../components/basic-http-router-reitit"}
-
-                       com.lambdaseq.stack/http-server           {:local/root "../../components/http-server-jetty"}
-
-                       com.lambdaseq.stack/logging               {:local/root "../../components/logging-telemere"}}}
+ :aliases {:backend  {:extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}}}
            :frontend {:extra-deps {}}
            :dev      {:extra-paths ["resources/dev"]
                       :extra-deps  {hashp/hashp {:mvn/version "0.2.1"}}}

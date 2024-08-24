@@ -1,8 +1,8 @@
 (ns com.lambdaseq.stack.electric-app-router.core
   (:require [com.lambdaseq.stack.logging.api :as log]
+            [com.lambdaseq.stack.protocols.api.provider.http-router :as router]
             [com.stuartsierra.component :as component]
             [muuntaja.core :as m]
-            [com.lambdaseq.stack.protocols.api.provider.http-router :as router]
             [reitit.coercion.malli :as rcm]
             [reitit.ring :as ring]))
 

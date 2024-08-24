@@ -1,4 +1,4 @@
-{:paths ["src" "resources"]
- :deps {}
+{:paths   ["src" "resources"]
+ :deps    {hiccup/hiccup {:mvn/version "2.0.0-RC3"}}
  :aliases {:test {:extra-paths ["test"]
-                  :extra-deps {}}}}
+                  :extra-deps  {}}}}

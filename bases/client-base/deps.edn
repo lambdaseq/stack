@@ -1,4 +1,6 @@
-{:paths ["src" "resources"]
- :deps {}
+{:paths   ["src" "resources"]
+ :deps    {com.lambdaseq.stack/bootstrap {:local/root "../bootstrap"}
+           com.lambdaseq.stack/web-app   {:local/root "../web-app"}
+           com.hyperfiddle/electric      {:mvn/version "v2-alpha-540-ga4699532"}}
  :aliases {:test {:extra-paths ["test"]
-                  :extra-deps {}}}}
+                  :extra-deps  {}}}}

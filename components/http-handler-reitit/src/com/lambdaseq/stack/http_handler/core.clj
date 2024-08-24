@@ -1,9 +1,9 @@
 (ns com.lambdaseq.stack.http-handler.core
-  (:require [com.stuartsierra.component :as component]
-            [reitit.ring :as ring]
+  (:require [com.lambdaseq.stack.logging.api :as log]
             [com.lambdaseq.stack.protocols.api.provider.http-handler :as handler]
             [com.lambdaseq.stack.protocols.api.provider.http-router :as router]
-            [com.lambdaseq.stack.logging.api :as log]))
+            [com.stuartsierra.component :as component]
+            [reitit.ring :as ring]))
 
 (defrecord ReititHandlerProvider
   [router-provider handler]

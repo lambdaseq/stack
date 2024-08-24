@@ -7,8 +7,8 @@
   [k]
   (let [n (namespace k)
         sym (cond-> "?"
-                   (not-empty n) (str n "-")
-                   :always (str (name k)))]
+              (not-empty n) (str n "-")
+              :always (str (name k)))]
     (symbol sym)))
 
 (defn build-clauses
@@ -17,21 +17,21 @@
   ([filters]
    (build-clauses filters '?e))
   ([filters entity-sym]
-   (reduce (fn [acc [k v]]
-             (let [prop-sym (keyword->datalog-query-symbol k)]
-               (cond-> acc
-                 (vector? v) (update :in conj [prop-sym '...])
-                 (not (vector? v)) (update :in conj prop-sym)
-                 (map? v) (do
-                            (let [{:keys [in where]} (build-clauses v prop-sym)]
-                              (-> acc
-                                  (update :in concat in)
-                                  (update :where concat where))))
-                 :always (update :where conj
-                                 [entity-sym k prop-sym]))))
-           {:in    []
-            :where []}
-           filters)))
+   (->> filters
+        (reduce (fn [acc [k v]]
+                  (let [prop-sym (keyword->datalog-query-symbol k)]
+                    (cond-> acc
+                      (vector? v) (update :in conj [prop-sym '...])
+                      (not (vector? v)) (update :in conj prop-sym)
+                      (map? v) (do
+                                 (let [{:keys [in where]} (build-clauses v prop-sym)]
+                                   (-> acc
+                                       (update :in concat in)
+                                       (update :where concat where))))
+                      :always (update :where conj
+                                      [entity-sym k prop-sym]))))
+                {:in    []
+                 :where []}))))
 
 (defn build-query
   "Given a map of where clauses (each key is a property and each value is a value to match)
