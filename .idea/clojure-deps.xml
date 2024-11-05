@@ -3,10 +3,16 @@
   <component name="DepsProjectSettings">
     <option name="enabledAliases">
       <set>
+        <option value="+datomic" />
+        <option value="+default" />
+        <option value="+http-compojure" />
+        <option value="+http-jetty" />
         <option value="+http-reitit" />
         <option value="+http-undertow" />
         <option value="+logging-mulog" />
         <option value="+logging-telemere" />
+        <option value="+redis" />
+        <option value="+xtdbv2" />
         <option value="backend" />
         <option value="defaults" />
         <option value="dev" />

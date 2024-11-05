@@ -1,4 +1,4 @@
-(ns com.lambdaseq.stack.persistence-xtdb.core-test
+(ns com.lambdaseq.stack.persistence-xtdb2.core-test
   (:require [clojure.test :refer :all]
             [com.stuartsierra.component :as component]
             [com.lambdaseq.stack.entity-manager.api :as-alias entity]

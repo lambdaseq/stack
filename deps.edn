@@ -8,50 +8,40 @@
               :extra-paths ["development/src" "development/resources"]
               :extra-deps
 
-              {org.clojure/clojure                                              {:mvn/version "1.11.3"}
-               org.clojure/clojurescript                                        {:mvn/version "1.11.132"}
-               org.clojure/tools.namespace                                      {:mvn/version "1.5.0"}
-               hashp/hashp                                                      {:mvn/version "0.2.2"}
-               binaryage/devtools                                               {:mvn/version "1.0.7"}
-               thheller/shadow-cljs                                             {:mvn/version "2.28.8"}
-               org.slf4j/slf4j-nop                                              {:mvn/version "2.0.14"}
+              {org.clojure/clojure                 {:mvn/version "1.11.3"}
+               org.clojure/clojurescript           {:mvn/version "1.11.132"}
+               org.clojure/tools.namespace         {:mvn/version "1.5.0"}
+               hashp/hashp                         {:mvn/version "0.2.2"}
+               binaryage/devtools                  {:mvn/version "1.0.7"}
+               thheller/shadow-cljs                {:mvn/version "2.28.8"}
+               org.slf4j/slf4j-nop                 {:mvn/version "2.0.14"}
 
                ; Stack (Framework bricks)
                ;; Bases
-               com.lambdaseq.stack/bootstrap                                    {:local/root "bases/bootstrap"}
-               com.lambdaseq.stack/repl                                         {:local/root "bases/repl"}
-               com.lambdaseq.stack/web-app                                      {:local/root "bases/web-app"}
+               com.lambdaseq.stack/bootstrap       {:local/root "bases/bootstrap"}
+               com.lambdaseq.stack/repl            {:local/root "bases/repl"}
+               com.lambdaseq.stack/web-app         {:local/root "bases/web-app"}
 
                ;; Components
-               com.lambdaseq.stack/config                                       {:local/root "components/config-aero"}
-               com.lambdaseq.stack/protocols                                    {:local/root "components/protocols"}
-               com.lambdaseq.stack/system                                       {:local/root "components/system"}
-               com.lambdaseq.stack/utils                                        {:local/root "components/utils"}
-               com.lambdaseq.stack/entity-manager                               {:local/root "components/entity-manager-malli"}
-               com.lambdaseq.stack/domain                                       {:local/root "components/domain"}
-               com.lambdaseq.stack/html-renderer                                {:local/root "components/html-renderer-hiccup"}
-               com.lambdaseq.stack/email-client                                 {:local/root "components/email-client-mailgun"}
+               com.lambdaseq.stack/config          {:local/root "components/config-aero"}
+               com.lambdaseq.stack/protocols       {:local/root "components/protocols"}
+               com.lambdaseq.stack/system          {:local/root "components/system"}
+               com.lambdaseq.stack/utils           {:local/root "components/utils"}
+               com.lambdaseq.stack/entity-manager  {:local/root "components/entity-manager-malli"}
+               com.lambdaseq.stack/domain          {:local/root "components/domain"}
+               com.lambdaseq.stack/html-renderer   {:local/root "components/html-renderer-hiccup"}
+               com.lambdaseq.stack/email-client    {:local/root "components/email-client-mailgun"}
 
                ;;; Http
-               com.lambdaseq.stack/http-client                                  {:local/root "components/http-client-courier"}
-
-               ;;;; Routing helpers
-
-               ;;; Database/Storage
-               #_#_com.lambdaseq.stack/persistence-xtdb {:local/root "components/persistence-xtdb"}
-               com.lambdaseq.stack/persistence-datomic-pro                      {:local/root "components/persistence-datomic-pro"}
-               com.lambdaseq.stack/persistence-schema-transformer-malli-datomic {:local/root "components/persistence-schema-transformer-malli-datomic"}
-               com.lambdaseq.stack/migration-datomic                            {:local/root "components/migration-datomic"}
-               com.lambdaseq.stack/datalog-query-builder                        {:local/root "components/datalog-query-builder"}
-               com.lambdaseq.stack/redis-store                                  {:local/root "components/redis-store-carmine"}
+               com.lambdaseq.stack/http-client     {:local/root "components/http-client-courier"}
 
                ;;; Frontend
-               com.lambdaseq.stack/frontend-router                              {:local/root "components/frontend-router-reitit"}
+               com.lambdaseq.stack/frontend-router {:local/root "components/frontend-router-reitit"}
 
                ; App specific bricks
                ;; Bases
-               com.lambdaseq.stack/admin-base                                   {:local/root "bases/admin-base"}
-               com.lambdaseq.stack/client-base                                  {:local/root "bases/client-base"}}}
+               com.lambdaseq.stack/admin-base      {:local/root "bases/admin-base"}
+               com.lambdaseq.stack/client-base     {:local/root "bases/client-base"}}}
 
              :+default          {:extra-deps {com.lambdaseq.stack/http-middleware       {:local/root "components/http-middleware-reitit"}
                                               com.lambdaseq.stack/http-electric-handler {:local/root "components/http-electric-handler-reitit"}
@@ -65,6 +55,15 @@
                                               com.lambdaseq.stack/http-server           {:local/root "components/http-server-jetty"}
 
                                               com.lambdaseq.stack/logging               {:local/root "components/logging-telemere"}}}
+
+             :+datomic          {:extra-deps {com.lambdaseq.stack/persistence-datomic-pro                      {:local/root "components/persistence-datomic-pro"}
+                                              com.lambdaseq.stack/persistence-schema-transformer-malli-datomic {:local/root "components/persistence-schema-transformer-malli-datomic"}
+                                              com.lambdaseq.stack/migration-datomic                            {:local/root "components/migration-datomic"}
+                                              com.lambdaseq.stack/datalog-query-builder                        {:local/root "components/datalog-query-builder"}}}
+
+             :+xtdbv2           {:extra-deps {com.lambdaseq.stack/persistence-xtdb2 {:local/root "components/persistence-xtdb2"}}}
+
+             :+redis            {:extra-deps {com.lambdaseq.stack/redis-store {:local/root "components/redis-store-carmine"}}}
 
              :+http-compojure   {:extra-deps {com.lambdaseq.stack/http-middleware       {:local/root "components/http-middleware-compojure"}
                                               com.lambdaseq.stack/http-electric-handler {:local/root "components/http-electric-handler-compojure"}
@@ -102,7 +101,7 @@
              :xtdb-opts         ["--add-opens=java.base/java.nio=ALL-UNNAMED" "-Dio.netty.tryReflectionSetAccessible=true"]
              :poly              {; Required for in-process XTDB
                                  #_#_:jvm-opts ["-Dpoly.test.jvm.opts=:jdm-opts"]
-                                 :main-opts  ["-m" "polylith.clj.core.poly-cli.core"]
+                                 :main-opts ["-m" "polylith.clj.core.poly-cli.core"]
                                  :extra-deps {polylith/clj-poly {:mvn/version "0.2.19"}
                                               polylith-kaocha/test-runner
                                               {:git/url   "https://github.com/imrekoszo/polylith-kaocha"

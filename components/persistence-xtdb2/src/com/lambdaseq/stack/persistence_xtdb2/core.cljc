@@ -1,4 +1,4 @@
-(ns com.lambdaseq.stack.persistence-xtdb.core
+(ns com.lambdaseq.stack.persistence-xtdb2.core
   (:require [com.stuartsierra.component :as component]
             [com.lambdaseq.stack.protocols.api.entity-manager :as em]
             [com.lambdaseq.stack.protocols.api.persistence :as persistence]
