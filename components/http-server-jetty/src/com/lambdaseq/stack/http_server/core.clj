@@ -29,9 +29,10 @@
       (accept [_this _servletContext wsContainer]
         (doto wsContainer
           (.setIdleTimeout (Duration/ofSeconds 60))
-          (.setMaxBinaryMessageSize (* 100 1024 1024))      ; 100M - temporary
-          (.setMaxTextMessageSize (* 100 1024 1024)))       ; 100M - temporary
-        ))))
+          ; 100M - temporary
+          (.setMaxBinaryMessageSize (* 100 1024 1024))
+          ; 100M - temporary
+          (.setMaxTextMessageSize (* 100 1024 1024)))))))
 
 (defrecord JettyHttpServer
   [config handler-provider server]

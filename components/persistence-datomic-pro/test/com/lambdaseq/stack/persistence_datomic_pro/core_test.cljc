@@ -1,9 +1,12 @@
 (ns com.lambdaseq.stack.persistence-datomic-pro.core-test
   (:require [clojure.test :refer [deftest testing use-fixtures]]
+            [com.lambdaseq.stack.entity-manager.api :as entity]
             [com.stuartsierra.component :as component]
             [com.lambdaseq.stack.entity-manager.core-test :refer [schemas]]
             [com.lambdaseq.stack.persistence-datomic-pro.core :refer :all]
             [com.lambdaseq.stack.protocols.api.persistence-test :refer :all]
+            [com.lambdaseq.stack.migration-datomic.api :as migration-datomic]
+            [com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.api :as dpst]
             [com.lambdaseq.stack.utils.test :refer :all]))
 
 (use-fixtures :each (with-system-fixture
@@ -11,17 +14,17 @@
                         :datomic-config {:uri "datomic:mem://test"}
                         :schemas schemas
                         :entity-manager (component/using
-                                          (fresh-entity-manager)
+                                          (entity/make-entity-manager)
                                           [:schemas])
                         :persistence-transformer (component/using
-                                                   (fresh-malli-datomic-persistence-schema-transformer)
+                                                   (dpst/make-persistence-schema-transformer)
                                                    [:entity-manager])
                         :migration (component/using
-                                     (fresh-datomic-migration)
+                                     (migration-datomic/make-migration)
                                      {:entity-manager          :entity-manager
                                       :persistence-transformer :persistence-transformer})
                         :persistence (component/using
-                                       (fresh-datomic-pro-persistence)
+                                       (make-persistence)
                                        {:entity-manager :entity-manager
                                         :config         :datomic-config
                                         :migration      :migration}))))

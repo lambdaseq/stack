@@ -61,9 +61,11 @@
                                               com.lambdaseq.stack/migration-datomic                            {:local/root "components/migration-datomic"}
                                               com.lambdaseq.stack/datalog-query-builder                        {:local/root "components/datalog-query-builder"}}}
 
-             :+xtdbv2           {:extra-deps {com.lambdaseq.stack/persistence-xtdb2 {:local/root "components/persistence-xtdb2"}}}
-
              :+redis            {:extra-deps {com.lambdaseq.stack/redis-store {:local/root "components/redis-store-carmine"}}}
+
+             :+xtdb             {:extra-deps {com.lambdaseq.stack/persistence-xtdb {:local/root "components/persistence-xtdb"}}}
+
+             :+xtdb2            {:extra-deps {com.lambdaseq.stack/persistence-xtdb2 {:local/root "components/persistence-xtdb2"}}}
 
              :+http-compojure   {:extra-deps {com.lambdaseq.stack/http-middleware       {:local/root "components/http-middleware-compojure"}
                                               com.lambdaseq.stack/http-electric-handler {:local/root "components/http-electric-handler-compojure"}

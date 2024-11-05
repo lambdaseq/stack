@@ -1,5 +1,7 @@
 (ns com.lambdaseq.stack.http-server.core
   (:require [com.lambdaseq.stack.logging.api :as log]
+            [com.lambdaseq.stack.protocols.api.provider.http-handler :as handler]
+            [com.stuartsierra.component :as component]
             [strojure.undertow.server :as server]))
 
 (defrecord UndertowHttpServer [config handler-provider server]

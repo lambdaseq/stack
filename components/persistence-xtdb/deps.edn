@@ -1,4 +1,4 @@
 {:paths   ["src" "resources"]
- :deps    {com.hyperfiddle/electric      {:mvn/version "v2-alpha-540-ga4699532"}}
+ :deps    {com.xtdb/xtdb-core {:mvn/version "1.24.3"}}
  :aliases {:test {:extra-paths ["test"]
                   :extra-deps  {}}}}

@@ -1,5 +1,7 @@
 (ns com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.core-test
   (:require [clojure.test :refer [deftest is testing use-fixtures]]
+            [com.lambdaseq.stack.entity-manager.api :as entity]
+            [com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.api :as dpst]
             [com.stuartsierra.component :as component]
             [com.lambdaseq.stack.protocols.api.transformer.schema :as ts]
             [com.lambdaseq.stack.utils.test :refer :all]))
@@ -20,10 +22,10 @@
                       (component/system-map
                         :schemas schemas
                         :entity-manager (component/using
-                                          (fresh-entity-manager)
+                                          (entity/make-entity-manager)
                                           [:schemas])
                         :transformer (component/using
-                                       (fresh-malli-datomic-persistence-schema-transformer)
+                                       (dpst/make-persistence-schema-transformer)
                                        [:entity-manager]))))
 
 (deftest transform--test

@@ -1,23 +1,25 @@
 (ns com.lambdaseq.stack.migration-datomic.core-test
   (:require [clojure.test :refer :all]
-            [com.stuartsierra.component :as component]
             [com.lambdaseq.stack.entity-manager.api :as-alias entity]
             [com.lambdaseq.stack.entity-manager.core-test :refer [schemas]]
+            [com.lambdaseq.stack.migration-datomic.api :as migration-datomic]
+            [com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.api :as dpst]
             [com.lambdaseq.stack.protocols.api.migration :as migration]
-            [com.lambdaseq.stack.utils.test :refer :all]))
+            [com.lambdaseq.stack.utils.test :refer :all]
+            [com.stuartsierra.component :as component]))
 
 (use-fixtures :each (with-system-fixture
                       (component/system-map
                         :schemas schemas
                         :entity-manager (component/using
-                                          (fresh-entity-manager)
+                                          (entity/make-entity-manager)
                                           [:schemas])
                         :persistence-transformer
                         (component/using
-                          (fresh-malli-datomic-persistence-schema-transformer)
+                          (dpst/make-persistence-schema-transformer)
                           [:entity-manager])
                         :migration (component/using
-                                     (fresh-datomic-migration)
+                                     (migration-datomic/make-migration)
                                      [:entity-manager :persistence-transformer]))))
 
 (deftest gen-migration--test

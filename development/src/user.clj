@@ -11,15 +11,15 @@
             [com.lambdaseq.stack.http-handler.api :as http-handler]
             [com.lambdaseq.stack.http-middleware.api :as http-middleware]
             [com.lambdaseq.stack.http-server.api :as http-server]
-            [com.lambdaseq.stack.migration-datomic.api :as datomic.migration]
-            [com.lambdaseq.stack.persistence-datomic-pro.api :as datomic-pro]
-            [com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.api :as m.d.persistence-schema-transformer]
+            ;[com.lambdaseq.stack.migration-datomic.api :as datomic.migration]
+            ;[com.lambdaseq.stack.persistence-datomic-pro.api :as datomic-pro]
+            ;[com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.api :as m.d.persistence-schema-transformer]
             [com.lambdaseq.stack.repl.core :as repl]
             [com.lambdaseq.stack.resource-router.api :as resource-router]
             [com.lambdaseq.stack.router-aggregator.api :as router-aggregator]
             [com.lambdaseq.stack.system.api :as system]
             [com.stuartsierra.component :as component]
-            [datomic.api :as d]
+            ;[datomic.api :as d]
             [hashp.core]
             [shadow.cljs.devtools.api :as shadow.api]
             [shadow.cljs.devtools.server :as shadow.server]))
@@ -44,7 +44,7 @@
              :xtdb-config {}
              :admin-jetty-config admin-jetty-config
              :client-jetty-config client-jetty-config
-             :datomic-config {:uri "datomic:mem://dev"}
+             ;:datomic-config {:uri "datomic:mem://dev"}
              :schemas domain/schemas
              :email-client-config {}
              :email-client (component/using
@@ -54,19 +54,19 @@
                                (entity/make-entity-manager)
                                [:schemas])
 
-             :datomic-persistence-schema-transformer (component/using
-                                                       (m.d.persistence-schema-transformer/make-persistence-schema-transformer)
-                                                       [:entity-manager])
+             ;:datomic-persistence-schema-transformer (component/using
+             ;                                          (m.d.persistence-schema-transformer/make-persistence-schema-transformer)
+             ;                                          [:entity-manager])
 
-             :datomic-migration (component/using
-                                  (datomic.migration/make-migration)
-                                  {:entity-manager          :entity-manager
-                                   :persistence-transformer :datomic-persistence-schema-transformer})
+             ;:datomic-migration (component/using
+             ;                     (datomic.migration/make-migration)
+             ;                     {:entity-manager          :entity-manager
+             ;                      :persistence-transformer :datomic-persistence-schema-transformer})
 
-             :datomic-persistence (component/using
-                                    (datomic-pro/make-persistence)
-                                    {:entity-manager :entity-manager
-                                     :config         :datomic-config})
+             ;:datomic-persistence (component/using
+             ;                       (datomic-pro/make-persistence)
+             ;                       {:entity-manager :entity-manager
+             ;                        :config         :datomic-config})
 
              :http-middleware http-middleware/middleware
 
@@ -171,14 +171,3 @@
 (defn restart-shadow! []
   (stop-shadow!)
   (start-shadow!))
-
-
-(comment
-  (def datomic (:datomic-persistence admin-system))
-
-  ;; add a person to datomic
-  (let [{:keys [conn]} datomic
-        person {:first-name "John" :last-name "Doe" :age 30}]
-    (d/transact (:conn datomic) [{:com.lambdaseq.stack.protocols.api.persistence/schema :person
-                                  :com.lambdaseq.stack.protocols.api.persistence/data   person}]))
-  )

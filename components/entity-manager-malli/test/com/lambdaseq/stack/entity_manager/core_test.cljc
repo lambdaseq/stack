@@ -1,5 +1,6 @@
 (ns com.lambdaseq.stack.entity-manager.core-test
   (:require [clojure.test :refer [deftest testing use-fixtures]]
+            [com.lambdaseq.stack.entity-manager.api :as entity]
             [com.stuartsierra.component :as component]
             [com.lambdaseq.stack.protocols.api.entity-manager :as em]
             [com.lambdaseq.stack.protocols.api.entity-manager-test :refer :all]
@@ -21,7 +22,7 @@
                       (component/system-map
                         :schemas schemas
                         :entity-manager (component/using
-                                          (fresh-entity-manager)
+                                          (entity/make-entity-manager)
                                           [:schemas]))))
 
 (deftest validate--test

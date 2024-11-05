@@ -12,6 +12,8 @@
         <option value="+logging-mulog" />
         <option value="+logging-telemere" />
         <option value="+redis" />
+        <option value="+xtdb" />
+        <option value="+xtdb2" />
         <option value="+xtdbv2" />
         <option value="backend" />
         <option value="defaults" />
