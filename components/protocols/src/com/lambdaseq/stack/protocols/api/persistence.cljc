@@ -18,6 +18,8 @@
   (delete! [this schema id]
     "Delete an entity."))
 
+; TODO: Implementation for ITransactionalPersistence is (almost) always the same except for `transact!`
+;       See `XtdbPersistence` and `DatomicProPersistence`. Can be extracted into a macro that `extend-type`
 (defprotocol ITransactionalPersistence
   (persist [this schema data]
     "Prepares a new transaction operation that persists a new entity.")

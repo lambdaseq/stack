@@ -10,7 +10,7 @@
   (xt/template (from ~table [* {:xt/id ~id}])))
 
 
-(defrecord XtdbPersistence [config entity-manager node]
+(defrecord Xtdb2Persistence [config entity-manager node]
   component/Lifecycle
   (start [this]
     (log/info "Starting XtdbPersistence")
@@ -50,4 +50,4 @@
   (transact! [this]))
 
 (defn make-persistence []
-  (map->XtdbPersistence {}))
+  (map->Xtdb2Persistence {}))

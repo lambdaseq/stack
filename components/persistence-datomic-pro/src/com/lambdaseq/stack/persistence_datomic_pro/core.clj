@@ -1,11 +1,11 @@
 (ns com.lambdaseq.stack.persistence-datomic-pro.core
-  (:require [com.stuartsierra.component :as component]
-            [datomic.api :as d]
-            [com.lambdaseq.stack.datalog-query-builder.api :refer [build-query]]
+  (:require [com.lambdaseq.stack.datalog-query-builder.api :refer [build-query]]
             [com.lambdaseq.stack.logging.api :as log]
             [com.lambdaseq.stack.protocols.api.entity-manager :as em]
             [com.lambdaseq.stack.protocols.api.migration :as migration]
-            [com.lambdaseq.stack.protocols.api.persistence :as persistence])
+            [com.lambdaseq.stack.protocols.api.persistence :as persistence]
+            [com.stuartsierra.component :as component]
+            [datomic.api :as d])
   (:import (clojure.lang ExceptionInfo)))
 
 
@@ -21,9 +21,9 @@
           (let [schema (migration/gen-migration migration)]
             (when-let [tx-data (seq schema)]
               @(d/transact conn tx-data))))
-        this (-> this
-                 (assoc :conn conn)
-                 (persistence/clear-txs)))))
+        (-> this
+            (assoc :conn conn)
+            (persistence/clear-txs)))))
 
   (stop [this]
     (log/info! :stopping-component {:component this})
@@ -39,7 +39,7 @@
   persistence/IPersistence
   (db-id-key [_this _schema] :db/id)
 
-  ; TODO: Not the most efficient
+  ; TODO: Not the most efficient, fetches from db
   (db-id [this schema entity-id]
     (let [entity (persistence/fetch this schema entity-id)]
       (get entity (persistence/db-id-key this schema))))
@@ -75,11 +75,11 @@
   (search [_this schema {:keys [keys where] :as _opts}]
     (let [db (d/db conn)
           {:keys [query args]} (build-query {:keys  keys
-                                             :where where}
+                                             :where where
+                                             :datomic? true}
                                             (em/entity-id-key entity-manager schema))
           q-fn (partial d/q query db)
-          res (-> q-fn
-                  (apply args))]
+          res (apply q-fn args)]
       (apply concat res)))
 
   (persist! [this schema data]
@@ -92,7 +92,6 @@
     (-> this
         (persistence/patch schema id data)
         (persistence/transact!))
-    ; Not sure if this is a good idea
     (persistence/fetch this schema id))
 
   (delete! [this schema id]

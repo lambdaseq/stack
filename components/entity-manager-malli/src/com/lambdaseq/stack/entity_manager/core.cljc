@@ -59,6 +59,11 @@
         (m/properties {:registry registry})
         ::em/name))
 
+  (key [_this schema]
+    (-> schema
+        (m/properties {:registry registry})
+        ::em/key))
+
   (properties [_this schema]
     (m/properties schema {:registry registry}))
 

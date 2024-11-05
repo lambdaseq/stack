@@ -1,5 +1,5 @@
 (ns com.lambdaseq.stack.datalog-query-builder.core-test
-  (:require [clojure.test :refer [deftest testing is]]
+  (:require [clojure.test :refer [deftest is testing]]
             [com.lambdaseq.stack.datalog-query-builder.core :as sut]))
 
 (deftest keyword->datalog-query-symbol-test
@@ -29,14 +29,14 @@
 (deftest build-query-test
   (testing "when input is valid, a query that can be used with datalog should be returned"
     (is (= {:query '{:find  [(pull ?e [*])]
-                     :in    [$ ?person-name]
+                     :in    [?person-name]
                      :where [[?e :person/id _]
                              [?e :person/name ?person-name]]}
             :args  ["John"]}
            (sut/build-query {:where {:person/name "John"}}
                             :person/id)))
     (is (= {:query '{:find  [(pull ?e [*])]
-                     :in    [$ ?person-age]
+                     :in    [?person-age]
                      :where [[?e :person/id _]
                              [?e :person/age ?person-age]]}
             :args  [30]}
@@ -44,12 +44,23 @@
                             :person/id))))
   (testing "when the :keys key is provided, the query should use the provided keys"
     (is (= {:query '{:find  [(pull ?e [:person/id :person/name])]
-                     :in    [$ ?person-name]
+                     :in    [?person-name]
                      :where [[?e :person/id _]
                              [?e :person/name ?person-name]]}
             :args  ["John"]}
            (sut/build-query {:keys  [:person/id :person/name]
                              :where {:person/name "John"}}
-                            :person/id)))))
+                            :person/id))))
+  (testing "when :datomic? option is true, then the query is made to conform to datomic"
+    (testing "adds a '$' symbol as the first element in `:in`"
+      (is (= {:query '{:find  [(pull ?e [:person/id :person/name])]
+                       :in    [$ ?person-name]
+                       :where [[?e :person/id _]
+                               [?e :person/name ?person-name]]}
+              :args  ["John"]}
+             (sut/build-query {:keys     [:person/id :person/name]
+                               :where    {:person/name "John"}
+                               :datomic? true}
+                              :person/id))))))
 
 

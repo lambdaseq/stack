@@ -36,7 +36,7 @@
 (defn build-query
   "Given a map of where clauses (each key is a property and each value is a value to match)
   build a query that can be used with datalog."
-  [{:keys [keys where] :as _query-opts} entity-id-key]
+  [{:keys [keys where datomic?] :as _query-opts} entity-id-key]
   (let [{where-clauses :where
          :keys         [in]}
         (build-clauses where)
@@ -44,7 +44,7 @@
                            [(list 'pull '?e (vec keys))])
                          '[(pull ?e [*])])]
     {:query (cond-> `{:find  ~find-clauses
-                      :in    [~'$]
+                      :in    ~(if datomic? ['$] [])
                       :where [[~'?e ~entity-id-key ~'_]]}
               (seq in) (update :in into in)
               (seq where-clauses) (update :where into where-clauses))

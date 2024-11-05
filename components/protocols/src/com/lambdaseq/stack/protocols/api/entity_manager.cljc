@@ -12,6 +12,8 @@
     "Validates the data against the schema.")
   (generate [this schema]
     "Generates a random value based on the schema.")
+  (key [this schema]
+    "Returns the keyword that nominates an entity schema.")
   (name [this schema]
     "Returns the entity name of an entity schema.")
   (properties [this schema]

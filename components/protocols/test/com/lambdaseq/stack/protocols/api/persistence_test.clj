@@ -77,7 +77,7 @@
 (defn persistence-fetch-tests []
   (let [{:keys [persistence entity-manager]} *system*]
     (testing "Inserting and retrieving an entity"
-      (let [person (em/generate entity-manager :person)
+       (let [person (em/generate entity-manager :person)
             person-id (em/entity-id entity-manager :person person)]
         ; TODO: Fix blocking forever for XTDBv2
         (persistence/persist! persistence :person person)

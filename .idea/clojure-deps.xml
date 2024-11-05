@@ -5,6 +5,12 @@
       <set>
         <option value="+datomic" />
         <option value="+default" />
+        <option value="+http-compojure" />
+        <option value="+http-jetty" />
+        <option value="+http-reitit" />
+        <option value="+http-undertow" />
+        <option value="+logging-mulog" />
+        <option value="+logging-telemere" />
         <option value="+redis" />
         <option value="+xtdb" />
         <option value="+xtdbv2" />

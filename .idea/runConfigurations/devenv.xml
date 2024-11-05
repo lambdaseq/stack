@@ -2,8 +2,7 @@
   <configuration default="false" name="devenv" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" singleton="true">
     <option name="configVersion" value="1" />
     <option name="displayName" value="devenv" />
-    <option name="execution" value="DEPS" />
-    <module name="stack" />
+    <module name="backindrive" />
     <option name="options" value="-A:dev:+default:test" />
     <option name="profiles" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
