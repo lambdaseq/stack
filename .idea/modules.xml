@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/bases/admin-base/admin-base.iml" filepath="$PROJECT_DIR$/bases/admin-base/admin-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/api-router-compojure/api-router-compojure.iml" filepath="$PROJECT_DIR$/components/api-router-compojure/api-router-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/api-router-reitit/api-router-reitit.iml" filepath="$PROJECT_DIR$/components/api-router-reitit/api-router-reitit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backindrive.iml" filepath="$PROJECT_DIR$/backindrive.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/basic-http-router-compojure/basic-http-router-compojure.iml" filepath="$PROJECT_DIR$/components/basic-http-router-compojure/basic-http-router-compojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/basic-http-router-reitit/basic-http-router-reitit.iml" filepath="$PROJECT_DIR$/components/basic-http-router-reitit/basic-http-router-reitit.iml" />
       <module fileurl="file://$PROJECT_DIR$/bases/bootstrap/bootstrap.iml" filepath="$PROJECT_DIR$/bases/bootstrap/bootstrap.iml" />
