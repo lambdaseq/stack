@@ -48,7 +48,7 @@
                                               com.lambdaseq.stack/http-handler          {:local/root "components/http-handler-reitit"}
                                               com.lambdaseq.stack/electric-app-router   {:local/root "components/electric-app-router-reitit"}
                                               com.lambdaseq.stack/api-router            {:local/root "components/api-router-reitit"}
-                                              com.lambdaseq.stack/resource-router       {:local/root "components/resource-router-reitit"}
+                                              com.lambdaseq.stack/resources-router      {:local/root "components/resources-router-reitit"}
                                               com.lambdaseq.stack/router-aggregator     {:local/root "components/router-aggregator-reitit"}
                                               com.lambdaseq.stack/basic-router          {:local/root "components/basic-http-router-reitit"}
 
@@ -72,7 +72,7 @@
                                               com.lambdaseq.stack/http-handler          {:local/root "components/http-handler-compojure"}
                                               com.lambdaseq.stack/electric-app-router   {:local/root "components/electric-app-router-compojure"}
                                               com.lambdaseq.stack/api-router            {:local/root "components/api-router-compojure"}
-                                              com.lambdaseq.stack/resource-router       {:local/root "components/resource-router-compojure"}
+                                              com.lambdaseq.stack/resources-router      {:local/root "components/resources-router-compojure"}
                                               com.lambdaseq.stack/router-aggregator     {:local/root "components/router-aggregator-compojure"}
                                               com.lambdaseq.stack/basic-router          {:local/root "components/basic-http-router-compojure"}}}
 
@@ -81,7 +81,7 @@
                                               com.lambdaseq.stack/http-handler          {:local/root "components/http-handler-reitit"}
                                               com.lambdaseq.stack/electric-app-router   {:local/root "components/electric-app-router-reitit"}
                                               com.lambdaseq.stack/api-router            {:local/root "components/api-router-reitit"}
-                                              com.lambdaseq.stack/resource-router       {:local/root "components/resource-router-reitit"}
+                                              com.lambdaseq.stack/resources-router      {:local/root "components/resources-router-reitit"}
                                               com.lambdaseq.stack/router-aggregator     {:local/root "components/router-aggregator-reitit"}
                                               com.lambdaseq.stack/basic-router          {:local/root "components/basic-http-router-reitit"}}}
 

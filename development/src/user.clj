@@ -15,7 +15,7 @@
             ;[com.lambdaseq.stack.persistence-datomic-pro.api :as datomic-pro]
             ;[com.lambdaseq.stack.persistence-schema-transformer-malli-datomic.api :as m.d.persistence-schema-transformer]
             [com.lambdaseq.stack.repl.core :as repl]
-            [com.lambdaseq.stack.resource-router.api :as resource-router]
+            [com.lambdaseq.stack.resources-router.api :as resources-router]
             [com.lambdaseq.stack.router-aggregator.api :as router-aggregator]
             [com.lambdaseq.stack.system.api :as system]
             [com.stuartsierra.component :as component]
@@ -89,8 +89,8 @@
                                       {:electric-handler :admin-electric-handler
                                        :middleware       :http-middleware})
 
-             :admin-resource-router (component/using
-                                      (resource-router/make-router)
+             :admin-resources-router (component/using
+                                      (resources-router/make-router)
                                       {:middleware :http-middleware
                                        :config     :admin-jetty-config})
 
@@ -99,7 +99,7 @@
                              {:middleware :http-middleware
                               :router1    :admin-api-router
                               :router2    :admin-electric-router
-                              :router3    :admin-resource-router})
+                              :router3    :admin-resources-router})
 
              :client-api-router (component/using
                                   (api-router/make-router [])
@@ -110,8 +110,8 @@
                                        {:electric-handler :client-electric-handler
                                         :middleware       :http-middleware})
 
-             :client-resource-router (component/using
-                                       (resource-router/make-router)
+             :client-resources-router (component/using
+                                       (resources-router/make-router)
                                        {:middleware :http-middleware
                                         :config     :client-jetty-config})
 
@@ -120,7 +120,7 @@
                               {:middleware :http-middleware
                                :router1    :client-api-router
                                :router2    :client-electric-router
-                               :router3    :client-resource-router})
+                               :router3    :client-resources-router})
 
              :admin-handler (component/using
                               (http-handler/make-handler)

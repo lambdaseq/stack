@@ -1,4 +1,4 @@
-(ns com.lambdaseq.stack.resource-router.core
+(ns com.lambdaseq.stack.resources-router.core
   (:require [com.lambdaseq.stack.logging.api :as log]
             [com.lambdaseq.stack.protocols.api.provider.http-router :as router]
             [com.stuartsierra.component :as component]

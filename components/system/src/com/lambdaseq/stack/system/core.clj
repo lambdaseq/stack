@@ -8,7 +8,7 @@
             [com.lambdaseq.stack.http-middleware.api :as http-middleware]
             [com.lambdaseq.stack.http-server.api :as http-server]
             [com.lambdaseq.stack.logging.api :as log]
-            [com.lambdaseq.stack.resource-router.api :as resource-router]
+            [com.lambdaseq.stack.resources-router.api :as resources-router]
             [com.lambdaseq.stack.router-aggregator.api :as router-aggregator]
             [com.stuartsierra.component :as component]))
 
@@ -49,8 +49,8 @@
                              {:electric-handler :http-electric-handler
                               :middleware       :http-middleware})
 
-      :resource-router (component/using
-                         (resource-router/make-router)
+      :resources-router (component/using
+                         (resources-router/make-router)
                          {:middleware :http-middleware
                           :config     :jetty-config})
 
@@ -59,7 +59,7 @@
                      {:middleware          :http-middleware
                       :api-router          :api-router
                       :electric-app-router :electric-app-router
-                      :resource-router     :resource-router})
+                      :resources-router     :resources-router})
 
       :http-handler (component/using
                       (http-handler/make-handler)
