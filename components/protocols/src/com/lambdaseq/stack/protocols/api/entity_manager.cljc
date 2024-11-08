@@ -1,5 +1,5 @@
 (ns com.lambdaseq.stack.protocols.api.entity-manager
-  (:refer-clojure :exclude [name]))
+  (:refer-clojure :exclude [name key]))
 
 (defprotocol EntityManager
   (get-registry [this]

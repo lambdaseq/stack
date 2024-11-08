@@ -40,12 +40,12 @@
   (persist! [_this schema data]
     (xt/execute-tx node [[:put-docs (em/name entity-manager schema) data]]))
   (patch! [this schema id data])
-  (delete! [this id])
+  (delete! [this schema id])
 
   persistence/ITransactionalPersistence
   (persist [this schema data])
   (patch [this schema id data])
-  (delete [this id])
+  (delete [this schema id])
   (clear-txs [this])
   (transact! [this]))
 

@@ -38,8 +38,8 @@
                com.lambdaseq.stack/persistence-datomic-pro                      {:local/root "components/persistence-datomic-pro"}
                com.lambdaseq.stack/persistence-schema-transformer-malli-datomic {:local/root "components/persistence-schema-transformer-malli-datomic"}
                com.lambdaseq.stack/migration-datomic                            {:local/root "components/migration-datomic"}
-               com.lambdaseq.stack/persistence-xtdb                             {:local/root "components/persistence-xtdb"}
-               ;com.lambdaseq.stack/persistence-xtdb2                            {:local/root "components/persistence-xtdb2"}
+               ;com.lambdaseq.stack/persistence-xtdb                             {:local/root "components/persistence-xtdb"}
+               com.lambdaseq.stack/persistence-xtdb2                            {:local/root "components/persistence-xtdb2"}
 
                ;;;; Redis
                com.lambdaseq.stack/redis-store                                  {:local/root "components/redis-store-carmine"}
@@ -103,11 +103,11 @@
                                                 :git/tag   "v0.8.4"
                                                 :git/sha   "f096de8"
                                                 :deps/root "projects/kaocha-wrapper"}}}
-             :jvm-opts          [:xtdb-opts]
+             :xtdb-jvm-opts     [:xtdb-opts]
              :xtdb-opts         ["--add-opens=java.base/java.nio=ALL-UNNAMED" "-Dio.netty.tryReflectionSetAccessible=true"]
              :poly              {; Required for in-process XTDB2
-                                 #_#_:jvm-opts ["-Dpoly.test.jvm.opts=:jvm-opts"]
-                                 :main-opts ["-m" "polylith.clj.core.poly-cli.core"]
+                                 :jvm-opts   ["-Dpoly.test.jvm.opts=:xtdb-jvm-opts"]
+                                 :main-opts  ["-m" "polylith.clj.core.poly-cli.core"]
                                  :extra-deps {polylith/clj-poly {:mvn/version "0.2.19"}
                                               polylith-kaocha/test-runner
                                               {:git/url   "https://github.com/imrekoszo/polylith-kaocha"

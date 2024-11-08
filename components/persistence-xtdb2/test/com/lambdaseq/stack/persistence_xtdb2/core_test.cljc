@@ -5,7 +5,6 @@
             [com.lambdaseq.stack.persistence-xtdb2.api :as xtdb2]
             [com.lambdaseq.stack.protocols.api.persistence :as persistence]
             [com.lambdaseq.stack.utils.test :refer :all]
-            [com.lambdaseq.stack.utils.test.persistence :refer :all]
             [com.stuartsierra.component :as component]))
 
 
